@@ -2,6 +2,13 @@
 
 > Support BIOS and UEFI methods at the same time; Secure boot is not supported temporarily！
 
+# Deploy the operating system
+BIOS
+![iShot_2025-01-16_17 30 53](https://github.com/user-attachments/assets/ad8a1a43-8f4a-4400-95f8-ba910451a494)
+
+UEFI
+![iShot_2025-01-16_17 30 38](https://github.com/user-attachments/assets/1221626f-8330-4156-9f44-82dedaee5ffb)
+
 # System
 
 | Name                          | Version                               | Verification   |
@@ -48,9 +55,4 @@ restart pxe
 docker restart pxe
 ```
 
-# Deploy the operating system
-BIOS
-![iShot_2025-01-16_17 30 53](https://github.com/user-attachments/assets/ad8a1a43-8f4a-4400-95f8-ba910451a494)
 
-UEFI
-![iShot_2025-01-16_17 30 38](https://github.com/user-attachments/assets/1221626f-8330-4156-9f44-82dedaee5ffb)
