@@ -73,13 +73,18 @@ menuentry 'Rocky Linux 9.5 (No KS) (BIOS)' --class fedora --class gnu-linux --cl
     initrd16 /os/rocky/9/9.5/x86_64/isolinux/initrd.img
 }
 ```
+3. ks.cfg
+
+Provide ks.cfg, and options such as network, disk, and time zone will be defined according to ks.cfg when deploying the system.
+
+* ks.cfg: `/os/rocky/9/9.5/ks/`
 
 #### ubuntu series
 1. Upload images without decompression
 ![image](https://github.com/user-attachments/assets/fae18b7e-42db-49c5-a00d-0dcbb92a0162)
 
 2. copy initrd、vmlinuz
-```
+```bash
 # Mount image
 mount -t iso9660 -o loop ubuntu-24.04.1-live-server-amd64.iso /mnt/
 
@@ -100,5 +105,13 @@ menuentry 'Ubuntu 24.04 live server amd64 (cloud-init) (UEFI)' {
     initrd /os/ubuntu/24.04/boot/initrd
 }
 ```
+
+4. cloud-init
+
+Ubuntu uses cloud-init to define configuration options for initializing the system.
+
+* user-data: `/os/ubuntu/24.04/cloud-init/user-data`
+* vendor-data: `/os/ubuntu/24.04/cloud-init/vendor-data`
+* meta-data: `/os/ubuntu/24.04/cloud-init/meta-data`
 
 
