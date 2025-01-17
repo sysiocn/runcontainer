@@ -1,0 +1,25 @@
+# Copyright Sysio.ai, Inc. All Rights Reserved.
+# SPDX-License-Identifier: APACHE-2.0
+
+services:
+  pxe:
+    image: docker.io/sysiocn/pxe:0.1
+    container_name: pxe
+    restart: always
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - './dnsmasq/dnsmasq.d:/etc/dnsmasq.d'
+      - './dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf'
+      - './dnsmasq/misc:/var/lib/misc'
+      - '/data:/var/tftp'
+    network_mode: "host"
+  dufs:
+    image: docker.io/sigoden/dufs:v0.43.0
+    container_name: dufs
+    restart: always
+    volumes:
+      - '/data:/data'
+    network_mode: "host"
+    command: /data -A
+
